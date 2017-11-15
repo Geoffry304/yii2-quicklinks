@@ -1,0 +1,35 @@
+{
+    "name": "geoffry304/yii2-quicklinks",
+    "description": "Yii2 quicklinks for user",
+    "keywords": [
+        "yii2",
+        "extension",
+        "quicklink",
+        "user",
+        "links"
+    ],
+    "homepage": "https://github.com/geoffry304/yii2-quicklinks",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors":[
+        {
+            "name": "Geoffry Van den Eede",
+            "email": "g.vandeneede@dvit.be",
+            "homepage": "http://dvit.be"
+        },
+        {
+            "name": "Tim Van de Velde",
+            "email": "tim@dvit.be",
+            "homepage": "http://dvit.be"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "johnitvn/yii2-ajaxcrud": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "geoffry304\\quicklinks\\": ""
+        }
+    }
+}
