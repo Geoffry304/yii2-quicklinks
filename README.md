@@ -14,7 +14,7 @@ The preferred way to install **Quicklinks** is through [Composer](https://getcom
 
 Or run:
 
-`$ php composer.phar require geoffry304/yii2-quicklinksr "*"` 
+`$ php composer.phar require geoffry304/yii2-quicklinks "*"` 
 
 You can manually install **Quicklinks** by [downloading the source in ZIP-format](https://github.com/geoffry304/yii2-quicklinks/archive/master.zip).
 
