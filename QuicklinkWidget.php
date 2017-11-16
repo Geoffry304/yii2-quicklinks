@@ -14,6 +14,8 @@ class QuicklinkWidget extends \yii\base\Widget {
     const PLUGIN_NAME = 'Quicklink';
 
     public $sort = true;
+    
+    public $totalWithTitle = 3;
 
     public function run() {
         parent::run();
@@ -32,7 +34,7 @@ class QuicklinkWidget extends \yii\base\Widget {
         if ($models) {
             $count = count($models);
             foreach ($models as $model) {
-                $title = ($count > 3) ? $model->iconStyle : $model->iconStyle . " " . $model->title;
+                $title = ($count > $this->totalWithTitle) ? $model->iconStyle : $model->iconStyle . " " . $model->title;
                 $output .= "<li class='dropdown'>";
                 if ($model->newwindow == models\Quicklink::TARGET_NEWWINDOW) {
                     $output .= \yii\helpers\Html::a($title, $model->link, ['title' => $model->title, 'target' => '_blank']);
