@@ -25,7 +25,8 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "johnitvn/yii2-ajaxcrud": "dev-master"
+        "johnitvn/yii2-ajaxcrud": "dev-master",
+        "sjaakp/yii2-symbol-picker": "dev-master"
     },
     "autoload": {
         "psr-4": {

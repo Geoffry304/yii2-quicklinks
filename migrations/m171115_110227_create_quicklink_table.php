@@ -15,7 +15,7 @@ class m171115_110227_create_quicklink_table extends Migration
         $this->createTable('quicklink', [
             'id' => $this->primaryKey(),
             'userid' => $this->integer()->notNull(),
-            'link' => $this->string()->notNull(),
+            'link' => $this->text()->notNull(),
             'title' => $this->string(255),
             'icon' => $this->string(255),
             'newwindow' => $this->integer(1)->notNull()->defaultValue(1),

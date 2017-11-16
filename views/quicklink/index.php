@@ -25,8 +25,8 @@ CrudAsset::register($this);
             'columns' => require(__DIR__.'/_columns.php'),
             'toolbar'=> [
                 ['content'=>
-                    Html::a('<i class="glyphicon glyphicon-plus"></i>', ['quicklink/create'],
-                    ['role'=>'modal-remote','title'=> 'Create new Quicklinks','class'=>'btn btn-success']).
+                    Html::a('<i class="glyphicon glyphicon-plus"></i>', ['quicklink/create', 'userid' => $id],
+                    ['role'=>'modal-remote','title'=> Yii::t('quicklink','Create new Quicklinks'),'class'=>'btn btn-success']).
                     '{export}'
                 ],
             ],          
@@ -35,17 +35,17 @@ CrudAsset::register($this);
             'responsive' => true,          
             'panel' => [
                 'type' => 'primary', 
-                'heading' => '<i class="glyphicon glyphicon-list"></i> Quicklinks listing',
+                'heading' => '<i class="glyphicon glyphicon-list"></i> '. Yii::t('quicklink','Quicklinks'),
                 'after'=>BulkButtonWidget::widget([
-                            'buttons'=>Html::a('<i class="glyphicon glyphicon-trash"></i>&nbsp; Delete All',
+                            'buttons'=>Html::a('<i class="glyphicon glyphicon-trash"></i>&nbsp; '. Yii::t('quicklink','Delete all'),
                                 ["quicklink/bulk-delete"] ,
                                 [
                                     "class"=>"btn btn-danger btn-xs",
                                     'role'=>'modal-remote-bulk',
                                     'data-confirm'=>false, 'data-method'=>false,// for overide yii data api
                                     'data-request-method'=>'post',
-                                    'data-confirm-title'=>'Are you sure?',
-                                    'data-confirm-message'=>'Are you sure want to delete this item'
+                                    'data-confirm-title'=>Yii::t('quicklink','Are you sure?'),
+                                    'data-confirm-message'=>Yii::t('quicklink','Are you sure you want to delete this item')
                                 ]),
                         ]).                        
                         '<div class="clearfix"></div>',
@@ -55,7 +55,7 @@ CrudAsset::register($this);
 </div>
 <?php Modal::begin([
     "id"=>"ajaxCrudModal",
-    "size"=>"modal-lg",
+    "size"=>"modal-md",
     "footer"=>"",// always need it for jquery plugin
 ])?>
 <?php Modal::end(); ?>

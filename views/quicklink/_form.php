@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use sjaakp\symbolpicker\SymbolPicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Quicklink */
@@ -11,17 +12,17 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'userid')->textInput() ?>
+    <?php // $form->field($model, 'userid')->textInput() ?>
 
-    <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'link')->textInput(['placeholder' => \yii\helpers\Url::base(true) ]) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'icon')->widget(SymbolPicker::className()) ?>
 
-    <?= $form->field($model, 'icon')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'newwindow')->dropDownList(geoffry304\quicklinks\models\Quicklink::valuesNewwindow()) ?>
 
-    <?= $form->field($model, 'newwindow')->textInput() ?>
-
-    <?= $form->field($model, 'position')->textInput() ?>
+    <?= $form->field($model, 'position')->textInput(['type' => "number", 'min' => "0"]) ?>
 
   
 	<?php if (!Yii::$app->request->isAjax){ ?>
