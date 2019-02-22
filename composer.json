@@ -24,7 +24,7 @@
         }
     ],
     "require": {
-        "johnitvn/yii2-ajaxcrud": "*",
+        "templesuite/yii2-ajaxcrud": "dev-master",
         "geoffry304/yii2-symbol-picker": "*"
     },
     "autoload": {
